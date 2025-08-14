@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sailing Strategy Trainer</title>
 <style>
   body {
@@ -40,18 +41,4 @@
 <div id="course">
   <div class="boat" style="left: 50px; top: 200px;"></div>
   <div class="boat" style="left: 150px; top: 300px;"></div>
-  <div id="wind-arrow" title="Click to rotate wind"></div>
-</div>
-<script>
-// Dragging boats
-let draggedBoat = null;
-let offsetX, offsetY;document.querySelectorAll('.boat').forEach(boat => { boat.addEventListener('pointerdown', e => { draggedBoat = boat; offsetX = e.clientX - boat.offsetLeft; offsetY = e.clientY - boat.offsetTop; boat.setPointerCapture(e.pointerId); });
-
-boat.addEventListener('pointermove', e => { if (!draggedBoat) return; let x = e.clientX - offsetX; let y = e.clientY - offsetY; draggedBoat.style.left = ${x}px; draggedBoat.style.top = ${y}px; });
-
-boat.addEventListener('pointerup', e => { draggedBoat = null; }); });
-
-// Rotating wind arrow let windAngle = 0; const windArrow = document.getElementById('wind-arrow'); windArrow.addEventListener('click', () => { windAngle = (windAngle + 45) % 360; windArrow.style.transform = rotate(${windAngle}deg); }); </script>
-
-</body>
-</html>
+  <
